@@ -36,6 +36,9 @@
             this.dgvFiles = new System.Windows.Forms.DataGridView();
             this.Directory1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Directory2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDir1 = new System.Windows.Forms.Button();
+            this.btnDir2 = new System.Windows.Forms.Button();
+            this.FBD = new System.Windows.Forms.FolderBrowserDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFiles)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,11 +106,33 @@
             this.Directory2.HeaderText = "Directory 2";
             this.Directory2.Name = "Directory2";
             // 
+            // btnDir1
+            // 
+            this.btnDir1.Location = new System.Drawing.Point(649, 31);
+            this.btnDir1.Name = "btnDir1";
+            this.btnDir1.Size = new System.Drawing.Size(139, 25);
+            this.btnDir1.TabIndex = 6;
+            this.btnDir1.Text = "Open Directory 1";
+            this.btnDir1.UseVisualStyleBackColor = true;
+            this.btnDir1.Click += new System.EventHandler(this.btnDir1_Click);
+            // 
+            // btnDir2
+            // 
+            this.btnDir2.Location = new System.Drawing.Point(649, 81);
+            this.btnDir2.Name = "btnDir2";
+            this.btnDir2.Size = new System.Drawing.Size(139, 26);
+            this.btnDir2.TabIndex = 7;
+            this.btnDir2.Text = "Open Directory 2";
+            this.btnDir2.UseVisualStyleBackColor = true;
+            this.btnDir2.Click += new System.EventHandler(this.btnDir2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDir2);
+            this.Controls.Add(this.btnDir1);
             this.Controls.Add(this.dgvFiles);
             this.Controls.Add(this.btnCompare);
             this.Controls.Add(this.tbDir2);
@@ -133,6 +158,9 @@
         private System.Windows.Forms.DataGridView dgvFiles;
         private System.Windows.Forms.DataGridViewTextBoxColumn Directory1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Directory2;
+        private System.Windows.Forms.Button btnDir1;
+        private System.Windows.Forms.Button btnDir2;
+        private System.Windows.Forms.FolderBrowserDialog FBD;
     }
 }
 
