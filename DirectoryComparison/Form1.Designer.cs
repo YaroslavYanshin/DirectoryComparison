@@ -63,15 +63,17 @@
             // tbDir1
             // 
             this.tbDir1.Location = new System.Drawing.Point(103, 31);
+            this.tbDir1.Multiline = true;
             this.tbDir1.Name = "tbDir1";
-            this.tbDir1.Size = new System.Drawing.Size(540, 22);
+            this.tbDir1.Size = new System.Drawing.Size(540, 25);
             this.tbDir1.TabIndex = 2;
             // 
             // tbDir2
             // 
             this.tbDir2.Location = new System.Drawing.Point(103, 83);
+            this.tbDir2.Multiline = true;
             this.tbDir2.Name = "tbDir2";
-            this.tbDir2.Size = new System.Drawing.Size(540, 22);
+            this.tbDir2.Size = new System.Drawing.Size(540, 25);
             this.tbDir2.TabIndex = 3;
             // 
             // btnCompare
@@ -86,6 +88,7 @@
             // 
             // dgvFiles
             // 
+            this.dgvFiles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvFiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFiles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Directory1,
@@ -110,7 +113,7 @@
             // 
             this.btnDir1.Location = new System.Drawing.Point(649, 31);
             this.btnDir1.Name = "btnDir1";
-            this.btnDir1.Size = new System.Drawing.Size(139, 25);
+            this.btnDir1.Size = new System.Drawing.Size(140, 25);
             this.btnDir1.TabIndex = 6;
             this.btnDir1.Text = "Open Directory 1";
             this.btnDir1.UseVisualStyleBackColor = true;
@@ -118,9 +121,9 @@
             // 
             // btnDir2
             // 
-            this.btnDir2.Location = new System.Drawing.Point(649, 81);
+            this.btnDir2.Location = new System.Drawing.Point(649, 83);
             this.btnDir2.Name = "btnDir2";
-            this.btnDir2.Size = new System.Drawing.Size(139, 26);
+            this.btnDir2.Size = new System.Drawing.Size(140, 25);
             this.btnDir2.TabIndex = 7;
             this.btnDir2.Text = "Open Directory 2";
             this.btnDir2.UseVisualStyleBackColor = true;
@@ -139,7 +142,10 @@
             this.Controls.Add(this.tbDir1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Directory Comparison";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFiles)).EndInit();
