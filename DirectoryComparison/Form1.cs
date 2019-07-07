@@ -12,12 +12,11 @@ namespace DirectoryComparison
         public Form1()
         {
             InitializeComponent();
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            FolderBrowserDialog FBD = new FolderBrowserDialog();
+            using (FolderBrowserDialog FBD = new FolderBrowserDialog());
 
         }
 
@@ -44,16 +43,21 @@ namespace DirectoryComparison
             if (!dir1.EndsWith("\\")) dir1 += "\\";
             string[] file_names1;
 
+            string dir2 = tbDir2.Text;
+            if (!dir2.EndsWith("\\")) dir2 += "\\";
+            string[] file_names2;
+
+
             if (cbDir.Checked == false)
             {
                 file_names1 = Directory.GetFiles(dir1);
+                file_names2 = Directory.GetFiles(dir2);
             }
             else
             {
                 file_names1 = FindFileDir(dir1);
+                file_names2 = FindFileDir(dir2);
             }
-
-
 
             for (int i = 0; i < file_names1.Length; i++)
             {
@@ -62,24 +66,7 @@ namespace DirectoryComparison
                 file_names1[i] = ReverseStringBuilder(file_names1[i]);
             }
 
-
             Array.Sort(file_names1);
-
-
-
-            string dir2 = tbDir2.Text;
-            if (!dir2.EndsWith("\\")) dir2 += "\\";
-            string[] file_names2;
-
-
-            if (cbDir.Checked == false)
-            {
-                file_names2 = Directory.GetFiles(dir2);
-            }
-            else
-            {
-                file_names2 = FindFileDir(dir2);
-            }
 
             for (int i = 0; i < file_names2.Length; i++)
             {
@@ -115,7 +102,7 @@ namespace DirectoryComparison
                     i2++;
                 }
             }
-            timer.Stop();
+
 
             for (int i = i1; i < file_names1.Length; i++)
             {
@@ -128,6 +115,7 @@ namespace DirectoryComparison
                 dgvFiles.Rows.Add(new Object[] { null, file_names2[i] });
             }
 
+            timer.Stop();
             tbTime.Text = timer.ElapsedMilliseconds.ToString();
             tbSame.Text = same.ToString();
 
